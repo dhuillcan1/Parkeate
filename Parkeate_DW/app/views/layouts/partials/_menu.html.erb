@@ -1,0 +1,54 @@
+<!-- Header -->
+<div class="allcontain">
+  <div class="header">
+  </div>
+  <!-- Navbar Up -->
+  <nav class="topnavbar navbar-default topnav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
+          <span class="sr-only"> Toggle navigaion</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="upmenu">
+      <ul class="nav navbar-nav" id="navbarontop">
+        <li class="active"><a href="/home/index">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estacionamientos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Parking</li>
+            <li><%= link_to 'Listar', parkings_path %></li>
+            <li><%= link_to 'Registrar', parkings_new_path %></li>
+            <li><%= link_to 'Alquilar', rents_new_path %></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mis Alquileres <span class="caret"></span></a>
+           <ul class="dropdown-menu">
+            <li class="dropdown-header">Alquilares</li>
+            <li><%= link_to 'Listar', rents_path %></li>
+          </ul>
+        </li>
+        <li>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios Adicionales <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Services</li>
+            <li><%= link_to 'Listar', services_path %></li>
+            <li><%= link_to 'Registrar Servicio', services_new_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to 'Acerca de nosotros', about_path %></li>
+        <li><%= link_to 'Contactenos', contact_path %></li>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="users/show"> My Account</a></li>
+        </ul>
+      </ul>
+    </div>
+  </nav>
+</div>

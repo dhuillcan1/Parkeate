@@ -1,0 +1,37 @@
+<%= form_with(model: ubication, local: true) do |form| %>
+  <% if ubication.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ubication.errors.count, "error") %> prohibited this ubication from being saved:</h2>
+
+      <ul>
+      <% ubication.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :id_estacionamiento %>
+    <%= form.number_field :id_estacionamiento, id: :ubication_id_estacionamiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cod_departamento %>
+    <%= form.text_field :cod_departamento, id: :ubication_cod_departamento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cod_provincia %>
+    <%= form.text_field :cod_provincia, id: :ubication_cod_provincia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cod_distrito %>
+    <%= form.text_field :cod_distrito, id: :ubication_cod_distrito %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id usuario:</strong>
+  <%= @parking.id_usuario %>
+</p>
+
+<p>
+  <strong>Id ubicacion:</strong>
+  <%= @parking.id_ubicacion %>
+</p>
+<p>
+  <strong>Id imagen:</strong>
+  <%= @parking.id_imagen %>
+</p>
+
+<p>
+  <strong>Id servicio adicional:</strong>
+  <%= @parking.id_servicio_adicional %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @parking.nombre %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @parking.direccion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @parking.precio %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @parking.telefono %>
+</p>
+
+<p>
+  <strong>Id tipo:</strong>
+  <%= @parking.id_tipo %>
+</p>
+
+<%= link_to 'Edit', edit_parking_path(@parking) %> |
+<%= link_to 'Back', parkings_path %>
