@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20180916061246) do
   create_table "parkings", force: :cascade do |t|
     t.integer "id_usuario"
     t.integer "id_ubicacion"
-    t.integer "id_servicio_adicional"
     t.string "nombre"
     t.string "direccion"
     t.decimal "precio"
@@ -38,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180916061246) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer "id_estacionamiento"
+    t.integer "parking_id"
     t.integer "tipo_servicio"
     t.text "descripcion"
     t.float "tarifa"
