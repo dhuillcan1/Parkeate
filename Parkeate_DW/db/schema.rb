@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180913080625) do
+ActiveRecord::Schema.define(version: 20180916061246) do
 
   create_table "parkings", force: :cascade do |t|
     t.integer "id_usuario"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180913080625) do
   end
 
   create_table "rents", force: :cascade do |t|
-    t.integer "id_estacionamiento"
+    t.integer "parking_id"
     t.integer "id_usuario"
     t.datetime "fecha_inicio"
     t.datetime "fecha_fin"
@@ -61,12 +61,18 @@ ActiveRecord::Schema.define(version: 20180913080625) do
     t.string "apellido2"
     t.integer "id_tipo_documento"
     t.integer "numero_documento"
-    t.integer "id_tipo_usuario"
+    t.integer "usertype_id"
     t.string "telefono"
     t.string "correo"
     t.string "correo_confirmation"
     t.string "contraseña"
     t.string "contraseña_confirmation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "usertypes", force: :cascade do |t|
+    t.string "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

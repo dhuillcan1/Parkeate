@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :apellido2
       t.integer :id_tipo_documento
       t.integer :numero_documento
-      t.integer :id_tipo_usuario
+      t.integer :usertype_id
       t.string :telefono
       t.string :correo
       t.string :correo_confirmation

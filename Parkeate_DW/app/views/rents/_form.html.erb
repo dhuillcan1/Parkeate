@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :id_estacionamiento %>
-    <%= form.number_field :id_estacionamiento, id: :rent_id_estacionamiento %>
+    <%= form.label :parking_id %>
+    <%= form.collection_select :parking_id, Parking.all, :id, :nombre %>
   </div>
 
   <div class="field">

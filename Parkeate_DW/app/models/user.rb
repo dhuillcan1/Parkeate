@@ -7,6 +7,9 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class User < ApplicationRecord
+
+  belongs_to :usertype
+  
 	validates :nombre, :apellido1, :apellido2, :numero_documento, :telefono, :correo, :correo_confirmation, :contraseña, :contraseña_confirmation, presence: {message: 'Obligatorio'}
 	validates :numero_documento , length: {minimum:8, maximun:13, 
 		too_short:'Minimo %{count} digitos' , too_long: 'Maximo %{count} digitos'}

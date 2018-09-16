@@ -1,5 +1,6 @@
 class Parking < ApplicationRecord
 
+	has_many :rents, :dependent => :destroy
 	validates :nombre, :direccion, :precio, :telefono,:id_usuario,:id_tipo, presence: {message: 'Obligatorio'}
 	validates :telefono , length: {is:9 ,message: 'debe contener 9 digitos'}
 	validates :nombre,:direccion, length: {minimum:4, maximum:50 ,too_short:'Minimo %{count} caracteres', too_long:'Maximo %{count} caracteres'}
