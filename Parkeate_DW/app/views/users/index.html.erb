@@ -12,10 +12,10 @@
       <th>Numero documento</th>
       <th>Id tipo usuario</th>
       <th>Telefono</th>
-      <th>Correo1</th>
-      <th>Correo2</th>
-      <th>Contraseña1</th>
-      <th>Contraseña2</th>
+      <th>Correo</th>
+      <th>Correo_confirmation</th>
+      <th>Contraseña</th>
+      <th>Contraseña_confirmation</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,10 +30,10 @@
         <td><%= user.numero_documento %></td>
         <td><%= user.id_tipo_usuario %></td>
         <td><%= user.telefono %></td>
-        <td><%= user.correo1 %></td>
-        <td><%= user.correo2 %></td>
-        <td><%= user.contraseña1 %></td>
-        <td><%= user.contraseña2 %></td>
+        <td><%= user.correo %></td>
+        <td><%= user.correo_confirmation %></td>
+        <td><%= user.contraseña %></td>
+        <td><%= user.contraseña_confirmation %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -8,10 +8,10 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.integer :numero_documento
       t.integer :id_tipo_usuario
       t.string :telefono
-      t.string :correo1
-      t.string :correo2
-      t.string :contraseña1
-      t.string :contraseña2
+      t.string :correo
+      t.string :correo_confirmation
+      t.string :contraseña
+      t.string :contraseña_confirmation
 
       t.timestamps
     end

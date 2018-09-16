@@ -63,10 +63,10 @@ ActiveRecord::Schema.define(version: 20180913080625) do
     t.integer "numero_documento"
     t.integer "id_tipo_usuario"
     t.string "telefono"
-    t.string "correo1"
-    t.string "correo2"
-    t.string "contraseña1"
-    t.string "contraseña2"
+    t.string "correo"
+    t.string "correo_confirmation"
+    t.string "contraseña"
+    t.string "contraseña_confirmation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
