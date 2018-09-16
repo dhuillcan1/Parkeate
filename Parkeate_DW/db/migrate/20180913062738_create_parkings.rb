@@ -6,7 +6,7 @@ class CreateParkings < ActiveRecord::Migration[5.1]
       t.integer :id_servicio_adicional
       t.string :nombre
       t.string :direccion
-      t.float :precio
+      t.decimal :precio
       t.integer :telefono
       t.integer :id_tipo
 

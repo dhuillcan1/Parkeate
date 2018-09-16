@@ -16,6 +16,6 @@ class User < ApplicationRecord
     validates :correo,:correo_confirmation, email: true
     validates :correo, confirmation:true
     validates :contraseña, confirmation:true
-    validates :telefono , length: {is:9 ,message: 'debe contener 8 digitos'}
+    validates :telefono , length: {is:9 ,message: 'debe contener 9 digitos'}
     
 end
