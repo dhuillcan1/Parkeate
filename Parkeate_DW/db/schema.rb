@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180916061246) do
+ActiveRecord::Schema.define(version: 20180917050802) do
 
   create_table "parkings", force: :cascade do |t|
     t.integer "id_usuario"
     t.integer "id_ubicacion"
+    t.integer "id_servicio_adicional"
     t.string "nombre"
     t.string "direccion"
-    t.decimal "precio"
+    t.float "precio"
     t.integer "telefono"
     t.integer "id_tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "id_imagen"
   end
 
   create_table "rents", force: :cascade do |t|
-    t.integer "parking_id"
+    t.integer "id_estacionamiento"
     t.integer "id_usuario"
     t.datetime "fecha_inicio"
     t.datetime "fecha_fin"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180916061246) do
   end
 
   create_table "services", force: :cascade do |t|
-    t.integer "parking_id"
+    t.integer "id_estacionamiento"
     t.integer "tipo_servicio"
     t.text "descripcion"
     t.float "tarifa"
@@ -60,12 +60,12 @@ ActiveRecord::Schema.define(version: 20180916061246) do
     t.string "apellido2"
     t.integer "id_tipo_documento"
     t.integer "numero_documento"
-    t.integer "usertype_id"
+    t.integer "id_tipo_usuario"
     t.string "telefono"
-    t.string "correo"
-    t.string "correo_confirmation"
-    t.string "contraseña"
-    t.string "contraseña_confirmation"
+    t.string "correo1"
+    t.string "correo2"
+    t.string "contraseña1"
+    t.string "contraseña2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,6 +74,19 @@ ActiveRecord::Schema.define(version: 20180916061246) do
     t.string "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "usuarios", force: :cascade do |t|
+    t.string "nombre"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_usuarios_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end
 
 end

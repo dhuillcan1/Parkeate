@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :usuarios, controllers: {registration:'registro'}
   resources :usertypes
   resources :services
   get 'static/about'
