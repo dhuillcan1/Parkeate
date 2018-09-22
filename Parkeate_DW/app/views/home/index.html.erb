@@ -1,0 +1,27 @@
+<h1>Parkeate.com</h1>
+<p>El portal de estacionamientos líder en Perú*
+1,450 ofertas</p>
+
+
+<%= form_for :busqueda, :html => {:method=>:post} do |f| %>
+
+<div class ="form-group">
+	<div class="col-sm-1">
+		<%= f.label :estacionamiento %>
+	</div>
+	<div class="col-sm-offset-0 col-sm-3">
+		<%= f.text_field :estacionamiento,{:class =>"form-control"} %>
+	</div>
+	<div class="col-sm-1">
+		<%= f.label :distrito %>
+	</div>
+	<div class="col-sm-offset-0 col-sm-3">
+		<%= f.select :distrito,[["San Miguel", 1],["Cercado de Lima",2],["Callao",3]], {:include_blank =>"Seleccionar"},{:class => "form-control"} %>
+	</div>
+	<div class="col-sm-offset-0 col-sm-3">
+		<%= f.submit "Buscar estacionamientos", :class => "btn btn-primary" %>
+	</div>
+</div>
+
+
+<% end %>

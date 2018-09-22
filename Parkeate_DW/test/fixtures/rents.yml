@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_estacionamiento: 1
+  id_usuario: 1
+  fecha_inicio: 2018-09-13 01:31:58
+  fecha_fin: 2018-09-13 01:31:58
+  id_servicio_adicional: 1
+  observaciones: MyText
+
+two:
+  id_estacionamiento: 1
+  id_usuario: 1
+  fecha_inicio: 2018-09-13 01:31:58
+  fecha_fin: 2018-09-13 01:31:58
+  id_servicio_adicional: 1
+  observaciones: MyText

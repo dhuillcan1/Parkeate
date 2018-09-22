@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_estacionamiento: 1
+  cod_departamento: MyString
+  cod_provincia: MyString
+  cod_distrito: MyString
+
+two:
+  id_estacionamiento: 1
+  cod_departamento: MyString
+  cod_provincia: MyString
+  cod_distrito: MyString

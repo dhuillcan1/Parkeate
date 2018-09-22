@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id estacionamiento:</strong>
+  <%= @ubication.id_estacionamiento %>
+</p>
+
+<p>
+  <strong>Cod departamento:</strong>
+  <%= @ubication.cod_departamento %>
+</p>
+
+<p>
+  <strong>Cod provincia:</strong>
+  <%= @ubication.cod_provincia %>
+</p>
+
+<p>
+  <strong>Cod distrito:</strong>
+  <%= @ubication.cod_distrito %>
+</p>
+
+<%= link_to 'Edit', edit_ubication_path(@ubication) %> |
+<%= link_to 'Back', ubications_path %>
