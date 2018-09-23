@@ -3,6 +3,7 @@ class CreateParkings < ActiveRecord::Migration[5.1]
     create_table :parkings do |t|
       t.integer :id_usuario
       t.integer :id_ubicacion
+      t.integer :id_imagen
       t.string :nombre
       t.string :direccion
       t.decimal :precio

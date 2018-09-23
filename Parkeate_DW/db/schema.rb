@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20180916061246) do
     t.integer "id_tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "id_imagen"
   end
 
   create_table "rents", force: :cascade do |t|
