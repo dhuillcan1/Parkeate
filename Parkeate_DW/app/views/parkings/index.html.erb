@@ -2,8 +2,14 @@
 
 <h1>Parkings</h1>
 
-<table>
-  <thead>
+ <div class="jumbotron jumbotron-fluid">
+
+  <div class="container">
+   <h1 class="display-4">Listado de estacionamientos</h1>
+                <div class="row">
+            <div class="col">
+          <table class="table table-striped">
+            <thead>
     <tr>
       <th>Id usuario</th>
       <th>Id ubicacion</th>
@@ -18,8 +24,11 @@
   </thead>
 
   <tbody>
+
     <% @parkings.each do |parking| %>
+    
       <tr>
+        
         <td><%= parking.id_usuario %></td>
         <td><%= parking.id_ubicacion %></td>
         <td><%= parking.id_imagen %></td>
@@ -28,14 +37,21 @@
         <td><%= parking.precio %></td>
         <td><%= parking.telefono %></td>
         <td><%= parking.id_tipo %></td>
-        <td><%= link_to 'Show', parking %></td>
-        <td><%= link_to 'Edit', edit_parking_path(parking) %></td>
-        <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', parking, class: "btn btn-warning" %></td>
+        <td><%= link_to 'Editar', edit_parking_path(parking), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Eliminar', parking, class: "btn btn-danger", method: :delete, data: { confirm: 'Estas seguro?' } %></td>
       </tr>
+
     <% end %>
+
   </tbody>
+
 </table>
+<%= link_to 'Crear nuevo', new_parking_path, class: "btn btn-info" %>
+</div>
+</div>
 
 <br>
+</div>
 
-<%= link_to 'New Parking', new_parking_path %>
+   </div>

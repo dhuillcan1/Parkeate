@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Services</h1>
+<div class="jumbotron jumbotron-fluid">
 
-<table>
+  <div class="container">
+   <h1 class="display-4">Listado de Servicios</h1>
+                <div class="row">
+            <div class="col">
+          <table class="table table-striped">
   <thead>
     <tr>
       <th>Id estacionamiento</th>
@@ -20,9 +25,9 @@
         <td><%= service.tipo_servicio %></td>
         <td><%= service.descripcion %></td>
         <td><%= service.tarifa %></td>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', service, class: "btn btn-warning" %></td>
+        <td><%= link_to 'Editar', edit_service_path(service), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', service, class: "btn btn-danger", method: :delete, data: { confirm: 'Estas seguro' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'Crear nuevo servicio', new_service_path, class: "btn btn-info" %>

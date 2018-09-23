@@ -1,3 +1,8 @@
+<div class="jumbotron jumbotron-fluid">
+
+  <div class="container">
+   <h1 class="display-4">Servicio Registrado</h1>
+    <div class="row">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -20,5 +25,7 @@
   <%= @service.tarifa %>
 </p>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+<%= link_to 'Editar', edit_service_path(@service), class: "btn btn-info" %> |
+<%= link_to 'Regresar', services_path, class: "btn btn-info" %>
+ </div>
+  </div>

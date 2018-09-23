@@ -1,2 +1,82 @@
-<h1>Static#about</h1>
-<p>Find me in app/views/static/about.html.erb</p>
+<<div class="page-header">
+        <h1>Carousel</h1>
+      </div>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+
+  <ol class="carousel-indicators">
+
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+
+  </ol>
+
+  <!-- Wrapper for slides -->
+
+  <div class="carousel-inner" role="listbox">
+
+    <div class="item active">
+
+      <%= image_tag "parking01.jpg", html: { alt: "rest_slider1" } %>
+
+      <div class="carousel-caption">
+
+        <h3>Parkeate</h3>
+
+        <p>La mejor opción para estacionar tu vehiculo </p>
+
+      </div>
+
+    </div>
+
+    <div class="item">
+
+      <%= image_tag "parking02.jpg", html: { alt: "rest_slider2" } %>
+
+      <div class="carousel-caption">
+
+        <h3>Seguridad</h3>
+
+        <p>Seguridad y calidad en un solo lugar </p>
+
+      </div>
+
+    </div>
+
+    <div class="item">
+
+      <%= image_tag "parking03.jpg", html: { alt: "rest_slider3" }%>
+
+      <div class="carousel-caption">
+
+        <h3>Servicio de calidad</h3>
+
+        <p>El mejor servicio a tu disposición</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+
+    <span class="sr-only">Previous</span>
+
+  </a>
+
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+
+    <span class="sr-only">Next</span>
+
+  </a>

@@ -1,3 +1,10 @@
+
+<div class="jumbotron jumbotron-fluid">
+
+  <div class="container">
+   <h1 class="display-4">Registrar Alquiler</h1>
+                <div class="row">
+            <div class="col-md-6 col-md-offset-3">
 <%= form_with(model: rent, local: true) do |form| %>
   <% if rent.errors.any? %>
     <div id="error_explanation">
@@ -11,37 +18,41 @@
     </div>
   <% end %>
 
+<form class="form-inline" >
+            <div class="form-group">
+            <div class="col">  
+            
   <div class="field">
     <%= form.label :parking_id %>
-    <%= form.collection_select :parking_id, Parking.all, :id, :nombre %>
+    <%= form.collection_select :parking_id, Parking.all, :id, :nombre, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :id_usuario %>
-    <%= form.number_field :id_usuario, id: :rent_id_usuario %>
+    <%= form.number_field :id_usuario, id: :rent_id_usuario, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :fecha_inicio %>
-    <%= form.datetime_select :fecha_inicio, id: :rent_fecha_inicio %>
+    <%= form.datetime_select :fecha_inicio, id: :rent_fecha_inicio, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :fecha_fin %>
-    <%= form.datetime_select :fecha_fin, id: :rent_fecha_fin %>
+    <%= form.datetime_select :fecha_fin, id: :rent_fecha_fin, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :id_servicio_adicional %>
-    <%= form.number_field :id_servicio_adicional, id: :rent_id_servicio_adicional %>
+    <%= form.number_field :id_servicio_adicional, id: :rent_id_servicio_adicional, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :observaciones %>
-    <%= form.text_area :observaciones, id: :rent_observaciones %>
+    <%= form.text_area :observaciones, id: :rent_observaciones, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Crear nuevo Alquiler", class: "btn btn-info" %>
   </div>
 <% end %>

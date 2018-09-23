@@ -1,34 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron jumbotron-fluid">
 
-<p>
-  <strong>Id estacionamiento:</strong>
-  <%= @rent.parking_id %>
-</p>
+  <div class="container">
+   <h1 class="display-4">Alquiler Registrado</h1>
+    <div class="row">
+    
+      <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Id usuario:</strong>
-  <%= @rent.id_usuario %>
-</p>
+      <p>
+        <strong>Id estacionamiento:</strong>
+        <%= @rent.parking_id %>
+      </p>
 
-<p>
-  <strong>Fecha inicio:</strong>
-  <%= @rent.fecha_inicio %>
-</p>
+      <p>
+        <strong>Id usuario:</strong>
+        <%= @rent.id_usuario %>
+      </p>
 
-<p>
-  <strong>Fecha fin:</strong>
-  <%= @rent.fecha_fin %>
-</p>
+      <p>
+        <strong>Fecha inicio:</strong>
+        <%= @rent.fecha_inicio %>
+      </p>
 
-<p>
-  <strong>Id servicio adicional:</strong>
-  <%= @rent.id_servicio_adicional %>
-</p>
+      <p>
+        <strong>Fecha fin:</strong>
+        <%= @rent.fecha_fin %>
+      </p>
 
-<p>
-  <strong>Observaciones:</strong>
-  <%= @rent.observaciones %>
-</p>
+      <p>
+        <strong>Id servicio adicional:</strong>
+        <%= @rent.id_servicio_adicional %>
+      </p>
 
-<%= link_to 'Edit', edit_rent_path(@rent) %> |
-<%= link_to 'Back', rents_path %>
+      <p>
+        <strong>Observaciones:</strong>
+        <%= @rent.observaciones %>
+      </p>
+
+      <%= link_to 'Editar', edit_rent_path(@rent), class: "btn btn-info" %> |
+      <%= link_to 'Regresar', rents_path, class: "btn btn-info" %>
+      </div>
+  </div>
