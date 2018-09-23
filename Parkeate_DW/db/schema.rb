@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20180916061246) do
   create_table "parkings", force: :cascade do |t|
     t.integer "id_usuario"
     t.integer "id_ubicacion"
+    t.integer "id_imagen"
     t.string "nombre"
     t.string "direccion"
     t.decimal "precio"
