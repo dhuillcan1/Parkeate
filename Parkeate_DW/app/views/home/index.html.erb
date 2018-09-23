@@ -3,25 +3,24 @@
 1,450 ofertas</p>
 
 
-<%= form_for :busqueda, :html => {:method=>:post} do |f| %>
+<%= form_tag home_search_path do %>
 
 <div class ="form-group">
 	<div class="col-sm-1">
-		<%= f.label :estacionamiento %>
+		<%= label_tag 'name' %>
 	</div>
 	<div class="col-sm-offset-0 col-sm-3">
-		<%= f.text_field :estacionamiento,{:class =>"form-control"} %>
+		<%= text_field_tag 'name',nil,class: 'form-control' %>
 	</div>
 	<div class="col-sm-1">
-		<%= f.label :distrito %>
+		<%= label_tag 'distrito' %>
 	</div>
 	<div class="col-sm-offset-0 col-sm-3">
-		<%= f.select :distrito,[["San Miguel", 1],["Cercado de Lima",2],["Callao",3]], {:include_blank =>"Seleccionar"},{:class => "form-control"} %>
+		<%= select_tag 'distrito', {:include_blank =>"Seleccionar"},:class => "form-control" %>
 	</div>
 	<div class="col-sm-offset-0 col-sm-3">
-		<%= f.submit "Buscar estacionamientos", :class => "btn btn-primary" %>
+		<%= submit_tag "Buscar estacionamientos", :class => "btn btn-primary" %>
 	</div>
 </div>
-
 
 <% end %>

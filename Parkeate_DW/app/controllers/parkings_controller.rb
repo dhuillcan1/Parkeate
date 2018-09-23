@@ -4,11 +4,11 @@ class ParkingsController < ApplicationController
   # GET /parkings
   # GET /parkings.json
   def index
-    @estacionamiento=params[:estacionamiento]
+    @estacionamiento =params[:name]
     if @estacionamiento
-      @parkings=parking.where(:nombre=>@estacionamiento)
+      @parking= Parking.where(:nombre => @estacionamiento)
     else
-    @parkings = Parking.all
+      @parkings = Parking.all
     end
   end
 
@@ -69,7 +69,7 @@ class ParkingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_parking
-      @parking = Parking.find(params[:nombre])
+      @parking = Parking.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
