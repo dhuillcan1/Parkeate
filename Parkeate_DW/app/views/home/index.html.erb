@@ -1,3 +1,4 @@
+<<<<<<< HEAD
       <div class="page-header">
         <h1>Carousel</h1>
       </div>
@@ -81,6 +82,31 @@
 
   </a>
 
+=======
+<h1>Parkeate.com</h1>
+<p>El portal de estacionamientos líder en Perú*
+1,450 ofertas</p>
+
+
+<%= form_tag home_search_path do %>
+
+<div class ="form-group">
+	<div class="col-sm-1">
+		<%= label_tag 'name' %>
+	</div>
+	<div class="col-sm-offset-0 col-sm-3">
+		<%= text_field_tag 'name',nil,class: 'form-control' %>
+	</div>
+	<div class="col-sm-1">
+		<%= label_tag 'distrito' %>
+	</div>
+	<div class="col-sm-offset-0 col-sm-3">
+		<%= select_tag 'distrito', {:include_blank =>"Seleccionar"},:class => "form-control" %>
+	</div>
+	<div class="col-sm-offset-0 col-sm-3">
+		<%= submit_tag "Buscar estacionamientos", :class => "btn btn-primary" %>
+	</div>
+>>>>>>> 5dc782fcd717a58b75761ca0b7adcff0ff9766e7
 </div>
   <div class="container theme-showcase" role="main">
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -90,6 +116,7 @@
 			1,450 ofertas</p>
 			<%= form_for :busqueda, :html => {:method=>:post} do |f| %>
 
+<<<<<<< HEAD
 				<div class ="form-group">
 					<div class="col-sm-1">
 						<%= f.label :estacionamiento %>
@@ -110,4 +137,6 @@
 		</div>
 	</div>	
 
+=======
+>>>>>>> 5dc782fcd717a58b75761ca0b7adcff0ff9766e7
 <% end %>

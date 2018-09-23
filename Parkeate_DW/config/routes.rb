@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'static/contact'
 
   get 'home/index'
+  post 'home/search'
   root 'home#index'
+
   resources :ubications
   resources :rents
   resources :parkings
