@@ -7,7 +7,6 @@ class CreateRents < ActiveRecord::Migration[5.1]
       t.datetime :fecha_fin
       t.integer :id_servicio_adicional
       t.text :observaciones
-
       t.timestamps
     end
   end
