@@ -17,36 +17,46 @@
     <div class="collapse navbar-collapse" id="upmenu">
       <ul class="nav navbar-nav" id="navbarontop">
         <li class="active"><a href="/home/index">Home</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estacionamientos <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header"></li>
-            <li><%= link_to 'Listar', parkings_path %></li>
-            <li><%= link_to 'Registrar', parkings_new_path %></li>
-            <li><%= link_to 'Alquilar', rents_new_path %></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mis Alquileres <span class="caret"></span></a>
-           <ul class="dropdown-menu">
-            <li class="dropdown-header"></li>
-            <li><%= link_to 'Listar', rents_path %></li>
-          </ul>
-        </li>
-        <li>
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios Adicionales <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header"></li>
-            <li><%= link_to 'Listar', services_path %></li>
-            <li><%= link_to 'Registrar Servicio', services_new_path %></li>
-          </ul>
-        </li>
+        <% if logged_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estacionamientos <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header"></li>
+              <li><%= link_to 'Listar', parkings_path %></li>
+              <li><%= link_to 'Registrar', parkings_new_path %></li>
+              <li><%= link_to 'Alquilar', rents_new_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mis Alquileres <span class="caret"></span></a>
+             <ul class="dropdown-menu">
+              <li class="dropdown-header"></li>
+              <li><%= link_to 'Listar', rents_path %></li>
+            </ul>
+          </li>
+          <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios Adicionales <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-header"></li>
+              <li><%= link_to 'Listar', services_path %></li>
+              <li><%= link_to 'Registrar Servicio', services_new_path %></li>
+            </ul>
+          </li>
+        <% end %>
         <li><%= link_to 'Acerca de', about_path %></li>
         <li><%= link_to 'Contactenos', contact_path %></li>   
-          <ul class="nav navbar-nav navbar-right">
-          <li><a href="users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li><a><span class="glyphicon glyphicon-user"></span> <%= current_user.nombre %></a></li>
+            <li><%= link_to logout_path, method: :delete do %><span class="glyphicon glyphicon-log-in"></span> Salir<% end %></li>
+          <% else %>
+            <li><a href="<%= new_user_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="<%= login_path%>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <% end %>
+
+          <!-- <li><a href="users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li><a href="users/show"> My Account</a></li>
-          </ul>     
+          <li><a href="users/show"> My Account</a></li> -->
+        </ul>     
       </ul>
       
