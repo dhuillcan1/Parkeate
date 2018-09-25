@@ -1,19 +1,44 @@
+ 
+
+</br>
+</br>
+</br>
+ <div class="container theme-showcase" role="main">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron jumbotron-fluid">
+
+
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+          
+            <div class="container">
+             <h1 class="display-4">Ingresa al portal</h1>
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+              <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
+               <form class="form-inline" >
+                      <div class="form-group">
+                      <div class="col">  
+                
+                <div class="field">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: 'form-control' %>
+                 </div>
 
-    <p>¿No tienes cuenta? <%= link_to "Regístrate", signup_path %></p>
-  </div>
-</div>
+                  <div class="field">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: 'form-control' %>
+                 </div>
+
+                <%= f.submit "Log in", class: "btn btn-info" %>
+              
+              <p>¿No tienes cuenta? <%= link_to "Regístrate", signup_path %></p>
+            </div>
+     </div>
+     </div>
+   
+
+<% end %>

@@ -1,59 +1,65 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @user.nombre %>
-</p>
+<div class="jumbotron jumbotron-fluid">
 
-<p>
-  <strong>Apellido1:</strong>
-  <%= @user.apellido1 %>
-</p>
+  <div class="container">
+   <h1 class="display-4">Estacionamiento Registrado</h1>
+        <div class="row">
+        <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Apellido2:</strong>
-  <%= @user.apellido2 %>
-</p>
+        <p>
+          <strong>Nombre:</strong>
+          <%= @user.nombre %>
+        </p>
 
-<p>
-  <strong>Id tipo documento:</strong>
-  <%= @user.id_tipo_documento %>
-</p>
+        <p>
+          <strong>Apellido1:</strong>
+          <%= @user.apellido1 %>
+        </p>
 
-<p>
-  <strong>Numero documento:</strong>
-  <%= @user.numero_documento %>
-</p>
+        <p>
+          <strong>Apellido2:</strong>
+          <%= @user.apellido2 %>
+        </p>
 
-<p>
-  <strong>Id tipo usuario:</strong>
-  <%= @user.usertype_id %>
-</p>
+        <p>
+          <strong>Id tipo documento:</strong>
+          <%= @user.id_tipo_documento %>
+        </p>
 
-<p>
-  <strong>Telefono:</strong>
-  <%= @user.telefono %>
-</p>
+        <p>
+          <strong>Numero documento:</strong>
+          <%= @user.numero_documento %>
+        </p>
 
-<p>
-  <strong>Correo:</strong>
-  <%= @user.correo %>
-</p>
+        <p>
+          <strong>Id tipo usuario:</strong>
+          <%= @user.usertype_id %>
+        </p>
 
-<p>
-  <strong>Correo_confirmation:</strong>
-  <%= @user.correo_confirmation %>
-</p>
+        <p>
+          <strong>Telefono:</strong>
+          <%= @user.telefono %>
+        </p>
 
-<p>
-  <strong>Contraseña:</strong>
-  <%= @user.contraseña %>
-</p>
+        <p>
+          <strong>Correo:</strong>
+          <%= @user.correo %>
+        </p>
 
-<p>
-  <strong>Contraseña:</strong>
-  <%= @user.contraseña_confirmation %>
-</p>
+        <p>
+          <strong>Correo_confirmation:</strong>
+          <%= @user.correo_confirmation %>
+        </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+        <p>
+          <strong>Contraseña:</strong>
+          <%= @user.contraseña %>
+        </p>
+
+        <p>
+          <strong>Contraseña:</strong>
+          <%= @user.contraseña_confirmation %>
+        </p>
+
+        <%= link_to 'Editar', edit_user_path(@user), class: "btn btn-info" %> |
+        <%= link_to 'Regresar', users_path, class: "btn btn-info" %>

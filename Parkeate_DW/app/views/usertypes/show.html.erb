@@ -1,3 +1,8 @@
+<div class="jumbotron jumbotron-fluid">
+
+  <div class="container">
+   <h1 class="display-4">Tipo de usuario registrado</h1>
+        <div class="row">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -5,5 +10,5 @@
   <%= @usertype.descripcion %>
 </p>
 
-<%= link_to 'Edit', edit_usertype_path(@usertype) %> |
-<%= link_to 'Back', usertypes_path %>
+<%= link_to 'Editar', edit_usertype_path(@usertype), class: "btn btn-info" %> |
+<%= link_to 'Regresar', usertypes_path, class: "btn btn-info" %>

@@ -1,3 +1,7 @@
+</br>
+ <div class="container theme-showcase" role="main">
+<!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron jumbotron-fluid">
 <%= form_with(model: usertype, local: true) do |form| %>
   <% if usertype.errors.any? %>
     <div id="error_explanation">
@@ -11,12 +15,17 @@
     </div>
   <% end %>
 
+<div class="container">
+             <h1 class="display-4">Descrición de usuarios</h1>
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+
   <div class="field">
     <%= form.label :descripcion %>
-    <%= form.text_field :descripcion, id: :usertype_descripcion %>
+    <%= form.text_field :descripcion, id: :usertype_descripcion, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Registrarse", class: "btn btn-info"  %>
   </div>
 <% end %>
