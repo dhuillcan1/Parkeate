@@ -5,7 +5,7 @@
    <h1 class="display-4">Estacionamiento Registrado</h1>
        <div class="row">
           <p id="notice"><%= notice %></p>
-      <p>
+      <!-- <p>
         <strong>Id usuario:</strong>
         <%= @parking.id_usuario %>
       </p>
@@ -41,9 +41,38 @@
       <p>
         <strong>Id tipo:</strong>
         <%= @parking.id_tipo %>
-      </p>
+      </p> -->
+      <div class="row">
+        <div class="col-md-9">
+          <%= image_tag @parking.id_imagen_url, :width => '800px' %>
+        </div>
+        <div class="col-md-3">
+          <p>
+            <strong>Name:</strong>
+            <%= @parking.nombre %>
+          </p>
 
-      <%= link_to 'Editar', edit_parking_path(@parking), class: "btn btn-info" %> |
+          <p>
+            <strong>Direccion:</strong>
+            <%= @parking.direccion %>
+          </p>
+
+          <p>
+            <strong>Precio de alquiler:</strong>
+            <%= @parking.precio %>
+          </p>
+          
+          <% if logged_in? %>
+            <% if current_user.usertype_id == 1 %>
+              <%= link_to 'Editar', edit_parking_path(@parking), class: "btn btn-info" %>            
+            <% else %>
+              <%= link_to 'Alquilar' , rents_new_path, class: "btn btn-info" %>
+            <% end %>
+          <% end %>          
+
+        </div>
+      </div>
+
       <%= link_to 'Regresar', parkings_path, class: "btn btn-info" %>
        </div>
         </div>

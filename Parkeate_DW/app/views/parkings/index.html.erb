@@ -6,49 +6,92 @@
 
   <div class="container">
    <h1 class="display-4">Listado de estacionamientos</h1>
-                <div class="row">
-            <div class="col">
-          <table class="table table-striped">
-            <thead>
-    <tr>
-      <th>Id usuario</th>
-      <th>Id ubicacion</th>
-      <th>Id imagen</th>
-      <th>Nombre</th>
-      <th>Direccion</th>
-      <th>Precio</th>
-      <th>Telefono</th>
-      <th>Id tipo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="row">
+      <div class="col-md-2">
+          <div>Menus para busqueda</div>
+        </div>
 
-  <tbody>
+        <div class="col-md-10">
+          <table class="table">
+            <tbody>
+              <% @parkings.in_groups_of(1) do |group| %>
+                <tr>
+                  <% group.compact.each do |parking| %>
+                    <td class="col-md-3">
+                      <%= image_tag parking.id_imagen_url, width: '200px', height: '150px'  if parking.id_imagen.present? %>
+                    </td>
+                    <td class="col-md-5">
+                      <h4><%= parking.nombre %></h4>
+                      <h4><%= parking.direccion %></h4>
+                      <h4><%= parking.precio %></h4>
+                      <h4><%= parking.telefono %></h4>
+                    </td>
+                    <td class="col-md-2">
+                      <%= link_to 'Ver Detalle', parking, class: "btn btn-primary" %>
 
-    <% @parkings.each do |parking| %>
-    
-      <tr>
-        
-        <td><%= parking.id_usuario %></td>
-        <td><%= parking.id_ubicacion %></td>
-        <td><%= parking.id_imagen %></td>
-        <td><%= parking.nombre %></td>
-        <td><%= parking.direccion %></td>
-        <td><%= parking.precio %></td>
-        <td><%= parking.telefono %></td>
-        <td><%= parking.id_tipo %></td>
-        <td><%= link_to 'Mostrar', parking, class: "btn btn-warning" %></td>
-        <td><%= link_to 'Editar', edit_parking_path(parking), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Eliminar', parking, class: "btn btn-danger", method: :delete, data: { confirm: 'Estas seguro?' } %></td>
-      </tr>
+                      <% if logged_in? %>
+                        <% if current_user.usertype_id == 1 %>
+                          <%= link_to 'Editar', edit_parking_path(parking), class: "btn btn-warning" %>
+                          <%= link_to 'Eliminar', parking, class: "btn btn-danger", method: :delete, data: { confirm: 'Estas seguro?' } %>
+                        <% else %>
+                          <%= link_to 'Alquilar', rents_new_path, class: "btn btn-primary" %>
+                        <% end %>
+                      <% end %>
+                    </td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
 
-    <% end %>
+      <!-- <div class="col">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Id usuario</th>
+            <th>Id ubicacion</th>
+            <th>Id imagen</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Precio</th>
+            <th>Telefono</th>
+            <th>Id tipo</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead> 
 
-  </tbody>
+        <tbody>
 
-</table>
-<%= link_to 'Crear nuevo', new_parking_path, class: "btn btn-info" %>
-</div>
+          <% @parkings.each do |parking| %>
+          
+            <tr>
+              
+              <td><%= parking.id_usuario %></td>
+              <td><%= parking.id_ubicacion %></td>
+              <td><%= parking.id_imagen %></td>
+              <td><%= parking.nombre %></td>
+              <td><%= parking.direccion %></td>
+              <td><%= parking.precio %></td>
+              <td><%= parking.telefono %></td>
+              <td><%= parking.id_tipo %></td>
+              <td><%= link_to 'Mostrar', parking, class: "btn btn-warning" %></td>
+              <td><%= link_to 'Editar', edit_parking_path(parking), class: "btn btn-warning" %></td>
+              <td><%= link_to 'Eliminar', parking, class: "btn btn-danger", method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+            </tr>
+
+          <% end %>
+
+        </tbody>
+
+      </table>
+
+
+
+</div> -->
+<% if logged_in? && current_user.usertype_id == 1 %>
+  <%= link_to 'Crear nuevo', new_parking_path, class: "btn btn-info" %>
+<% end %>
 </div>
 
 <br>
