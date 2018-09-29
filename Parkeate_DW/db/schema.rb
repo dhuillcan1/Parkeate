@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180929035014) do
+ActiveRecord::Schema.define(version: 20180929060245) do
 
   create_table "parkings", force: :cascade do |t|
     t.integer "id_usuario"
     t.integer "id_ubicacion"
+    t.string "id_imagen"
     t.string "nombre"
     t.string "direccion"
     t.decimal "precio"
@@ -22,7 +23,12 @@ ActiveRecord::Schema.define(version: 20180929035014) do
     t.integer "id_tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "id_imagen"
+  end
+
+  create_table "doctypes", force: :cascade do |t|
+    t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rents", force: :cascade do |t|
@@ -41,6 +47,12 @@ ActiveRecord::Schema.define(version: 20180929035014) do
     t.integer "tipo_servicio"
     t.text "descripcion"
     t.float "tarifa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "servicetypes", force: :cascade do |t|
+    t.string "descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

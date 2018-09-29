@@ -29,7 +29,8 @@
 
   <div class="field">
     <%= form.label :tipo_servicio %>
-    <%= form.number_field :tipo_servicio, id: :service_tipo_servicio, class: 'form-control' %>
+    <!-- <%= form.number_field :tipo_servicio, id: :service_tipo_servicio, class: 'form-control' %> -->
+    <%= form.collection_select :tipo_servicio, Servicetype.all, :id, :descripcion, class: 'form-control' %>
   </div>
 
   <div class="field">

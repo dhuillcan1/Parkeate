@@ -4,4 +4,6 @@ class Service < ApplicationRecord
 	validates :descripcion, length: {maximum:150 ,too_long:'Maximo %{count} caracteres'}
     validates :tarifa, numericality:{greater_than:0, less_than:100, message:'incorrecto'}
 
+    belongs_to :servicetype, foreign_key: 'tipo_servicio'
+
 end
