@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   end
 
   def search
-    redirect_to parkings_path
+    redirect_to parkings_path(:name => params[:name])
   end
 
   #def buscar

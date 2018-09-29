@@ -6,7 +6,7 @@ class ParkingsController < ApplicationController
   def index
     @estacionamiento =params[:name]
     if @estacionamiento
-      @parking= Parking.where(:nombre => @estacionamiento)
+      @parkings= Parking.where(:nombre => @estacionamiento)
     else
       @parkings = Parking.all
     end
