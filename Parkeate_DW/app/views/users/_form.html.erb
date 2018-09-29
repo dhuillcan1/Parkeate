@@ -29,34 +29,34 @@
               </div>
 
               <div class="field">
-                <%= form.label :apellido1 %>
+                <%= form.label :apellido1, "Apellido paterno" %>
                 <%= form.text_field :apellido1, id: :user_apellido1, class: 'form-control'%>
               </div>
-
+              
               <div class="field">
-                <%= form.label :apellido2 %>
+                <%= form.label :apellido2, "Apellido materno" %>
                 <%= form.text_field :apellido2, id: :user_apellido2, class: 'form-control' %>
               </div>
-
+            
               <div class="field">
-                <%= form.label :id_tipo_documento %>
+                <%= form.label :id_tipo_documento, "Tipo de documento" %>
                 <%= form.number_field :id_tipo_documento, id: :user_id_tipo_documento, class: 'form-control' %>
               </div>
 
               <div class="field">
-                <%= form.label :numero_documento %>
+                <%= form.label :numero_documento, "Número de documento" %>
                 <%= form.number_field :numero_documento, id: :user_numero_documento, class: 'form-control' %>
-              </div>
+              </div>                           
 
               <div class="field">
-                <%= form.label :usertype_id %>
-                <%= form.number_field :usertype_id, id: :usertype_id, class: 'form-control' %>
+                <%= form.label :usertype_id, "Tipo de usuario" %>
+                <%= form.collection_select :usertype_id, Usertype.all, :id, :descripcion, class: 'form-control' %>
               </div>
-
+              
               <div class="field">
                 <%= form.label :telefono %>
                 <%= form.text_field :telefono, id: :user_telefono, class: 'form-control' %>
-              </div>
+              </div>              
 
               <div class="field">
                 <%= form.label :correo %>
@@ -64,7 +64,7 @@
               </div>
 
               <div class="field">
-                <%= form.label :correo_confirmation %>
+                <%= form.label :correo_confirmation, "Confirmar correo" %>
                 <%= form.text_field :correo_confirmation, id: :user_correo_confirmation, class: 'form-control' %>
               </div>
 
@@ -74,7 +74,7 @@
               </div>
 
               <div class="field">
-                <%= form.label :contraseña_confirmation %>
+                <%= form.label :contraseña_confirmation, "Confirmar contraseña" %>
                 <%= form.text_field :contraseña_confirmation, id: :user_contraseña_confirmation, class: 'form-control' %>
               </div>
 

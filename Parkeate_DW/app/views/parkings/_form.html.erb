@@ -37,7 +37,8 @@
 
             <div class="field">
               <%= form.label :id_imagen %>
-              <%= form.number_field :id_imagen, id: :parking_id_imagen, class: 'form-control' %>
+              <!-- <%= form.number_field :id_imagen, id: :parking_id_imagen, class: 'form-control' %> -->
+              <%= form.file_field :id_imagen, id: :parking_id_imagen %>
             </div>
 
             <div class="field">

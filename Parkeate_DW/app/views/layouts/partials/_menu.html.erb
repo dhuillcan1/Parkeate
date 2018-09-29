@@ -47,8 +47,16 @@
         <li><%= link_to 'Contactenos', contact_path %></li>   
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
-            <li><a><span class="glyphicon glyphicon-user"></span> <%= current_user.nombre %></a></li>
-            <li><%= link_to logout_path, method: :delete do %><span class="glyphicon glyphicon-log-in"></span> Salir<% end %></li>
+            <li>
+              <a href="<%= edit_user_path(current_user) %>">
+                <span class="glyphicon glyphicon-user"></span> <%= current_user.nombre %>
+              </a>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <span class="glyphicon glyphicon-log-in"></span> Salir
+              <% end %>
+            </li>
           <% else %>
             <li><a href="<%= new_user_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="<%= login_path%>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>

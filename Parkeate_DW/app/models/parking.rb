@@ -7,4 +7,6 @@ class Parking < ApplicationRecord
 	validates :nombre, format: { with: /\A[a-zA-ZñÑáéíóúÁÉÍÓÚ]+\z/,
     message: "solo permite letras" }
     validates :precio, numericality:{greater_than:0, less_than:1000, message:'incorrecto'}
+
+    mount_uploader :id_imagen, PictureUploader
 end
