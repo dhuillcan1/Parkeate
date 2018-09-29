@@ -1,3 +1,4 @@
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180916061246) do
+ActiveRecord::Schema.define(version: 20180929035014) do
 
-  create_table "parkings", force: :cascade do |t|
+  create_table "Parkings", force: :cascade do |t|
     t.integer "id_usuario"
     t.integer "id_ubicacion"
-    t.integer "id_imagen"
+    t.string "id_imagen"
     t.string "nombre"
     t.string "direccion"
     t.decimal "precio"
