@@ -40,7 +40,6 @@
             
               <div class="field">
                 <%= form.label :id_tipo_documento, "Tipo de documento" %>
-                <!-- <%= form.number_field :id_tipo_documento, id: :user_id_tipo_documento, class: 'form-control' %> -->
                 <%= form.collection_select :id_tipo_documento, Doctype.all, :id, :descripcion, class: 'form-control' %>
               </div>
 

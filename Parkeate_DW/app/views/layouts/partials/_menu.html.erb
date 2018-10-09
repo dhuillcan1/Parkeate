@@ -26,7 +26,6 @@
               <% if current_user.usertype_id == 1 %>
                 <li><%= link_to 'Registrar', parkings_new_path %></li>
               <% end %>
-              <!-- <li><%= link_to 'Alquilar', rents_new_path %></li> -->
             </ul>
           </li>
           <% if current_user.usertype_id == 1%>
@@ -65,10 +64,6 @@
             <li><a href="<%= new_user_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="<%= login_path%>"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <% end %>
-
-          <!-- <li><a href="users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li><a href="users/show"> My Account</a></li> -->
         </ul>     
       </ul>
       
